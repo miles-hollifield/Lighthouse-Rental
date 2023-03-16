@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Lighthouse Rentals</title>
+    <link href="css/mobile-first.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <a href="#main-content" id="bypass-link">Skip to main content</a>
+      <header role="banner">
+        <h1>St. Augustine Lighthouse Rentals</h1>
+        <picture>
+          <source srcset="images/banner-coastline-small.jpg 780w,
+                          images/banner-coastline-small.jpg 1560w,
+                          images/banner-coastline-large.jpg 2340w"
+                  sizes="100vw"
+                  media="(max-width: 779px)">
+          <source srcset="images/lighthouse-small.jpg,
+                          images/lighthouse-medium.jpg 2x,
+                          images/lighthouse-large.jpg 3x"
+                  media="(min-width: 780px)">
+          <img src="images/banner-coastline-small.jpg" alt="St. Augustine coastline">
+        </picture>
+        <label for="menu-trigger" id="menu-label">&#9776; Menu</label>
+        <input type="checkbox" id="menu-trigger">
+        <nav role="navigation">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Area&nbsp;Info</a></li>
+            <li><a href="#">Rental&nbsp;Info</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+    
+      <main id="main-content" tabindex="-1" role="main">
+        <article>
+          <h2>Welcome to Paradise</h2>
+          <div>
+            <h3>We're Seeking Travelers</h3>
+            <p>Our rental homes are situated at the base of the lighthouse. It is comfortable but will not smother. The location is ideal for anyone who likes lighthouses, fishing, birds, beaches, being alone, reading books, or making their own coffee.</p>
+            <p>This is an island waterway separated from the ocean by a small peninsula about 300 meters wide. It is a beautiful mooring area with dinghy activity and many live aboard sail boats. There is a fishing pier across the street and also a boat let in with one of the few low tide set-ins.</p>
+            <p>The state park with beach camping sailboat and kayak rentals is also on the salt run lagoon and within easy walking distance. The state beach is near pristine if you leave the immediate parking area. There are miles of beach no one ever goes to. We are across the street from the alligator farm which is a real biological park. It has the largest water bird rookery in the state.</p>
+          </div>
+        </article>
+        <aside role="complementary">
+          <h2>Our Property</h2>
+          <img src="images/bird-small.jpg" alt="parrot on beach" width="343" height="229" srcset="images/bird-small.jpg, images/bird-medium.jpg 2x, images/bird-large.jpg 3x">
+          <img src="images/coastline-small.jpg" alt="St. Augustine coastline" width="343" height="229" srcset="images/coastline-small.jpg, images/coastline-medium.jpg 2x, images/coastline-large.jpg 3x">
+          <img src="images/pier-small.jpg" alt="View of St. Augustine bay from a pier" width="343" height="229" srcset="images/pier-small.jpg, images/pier-medium.jpg 2x, images/pier-large.jpg 3x">
+        </aside>
+      </main>
+    
+      <footer role="contentinfo">
+        <section id="social-media">
+          <a href="#"><img src="images/facebook.png" width="45" height="45" alt="Facebook"></a>
+          <a href="#"><img src="images/twitter.png" width="45" height="45" alt="Twitter"></a>
+          <a href="#"><img src="images/instagram.png" width="45" height="45" alt="Instagram"></a>
+          <a href="#"><img src="images/pinterest.png" width="45" height="45" alt="Pinterest"></a>
+        </section>
+        <address>
+          <ul>
+            <li><a href="#"><img src="images/email.svg" width="35" height="19" alt="Email envelope">info@example.com</a></li>
+            <li><a href="tel:800-555-1234"><img src="images/phone.svg" width="33" height="23" alt="Telephone">800-555-1234</a></li>
+          </ul>
+        </address>
+      </footer>
+    </div>
+  </body>
+
+</html>

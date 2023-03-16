@@ -1,0 +1,424 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 18px Candara, Verdana, sans-serif;
+  margin: 0;
+}
+
+header h1 {
+  color: #4772a3;
+  margin: 0;
+  padding: .5rem;
+  text-align: center;
+}
+
+picture {
+  background-color: #3177cc;
+}
+
+picture img {
+  height: auto;
+  max-width: 100%;
+}
+
+/***********Bypass Link ***********/
+
+#bypass-link {
+  background-color: #000;
+  border: 5px solid #fff;
+  color: #fff;
+  font-size: 28px;
+  opacity: 0;
+  padding: 1rem;
+  position: absolute;
+  top: -110px;
+  z-index: 1;
+}
+
+#bypass-link:focus {
+  opacity: 1;
+  top: 0;
+  transition: all 1s;
+}
+
+/*********** Navigation ***********/
+
+nav {
+  background-color: #3177cc;
+  border-top: 1px dashed #fff;
+  display: none;
+  padding: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  border-bottom: 1px dashed #fff;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+#menu-label {
+  background-color: #3177cc;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  padding-bottom: .5rem;
+  text-align: center;
+}
+
+#menu-trigger:checked ~ nav {
+  display: block;
+}
+
+#menu-trigger {
+  display: none;
+}
+
+/********** Main Content **********/
+
+main h2 {
+  background-color: #668bb9;
+  margin-top: 0;
+  padding: .5rem;
+}
+
+main h3,
+main p {
+  margin: 0;
+  padding: .5rem;
+}
+
+/********** Sidebar *************/
+
+aside {
+  background-color: #6b8cb6;
+  padding: .5rem;
+}
+
+aside h2 {
+  background-color: #b0d380;
+  margin-top: 0;
+  padding: .5rem;
+}
+
+aside img {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  margin: 0 auto 1rem;
+  max-width: 100%;
+}
+
+/********** Footer ************/
+
+footer {
+  background-color: #f9e8ce;
+  padding: 1rem .5rem;
+}
+
+footer img {
+  margin-right: .5rem;
+}
+
+footer address {
+  font-style: normal;
+}
+
+footer address ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer address li {
+  margin-top: 1rem;
+}
+
+footer a {
+  color: #006;
+}
+
+/************ Fluid text ***********/
+
+@media screen and (min-width: 320px) {
+  
+  h1 {
+    font-size: calc(36px + (80 - 36) * (100vw - 320px) / (1180 - 320));
+  }
+  
+  main article h2 {
+    font-size: calc(27px + (48 - 27) * (100vw - 320px) / (1180 - 320));
+  }
+  
+  main div h3,
+  main aside h2 {
+    font-size: calc(21px + (36 - 21) * (100vw - 320px) / (1180 - 320));
+  }
+  
+  nav a,
+  main article p {
+    font-size: calc(18px + (24 - 18) * (100vw - 320px) / (1180 - 320));
+  }
+  
+}
+
+/******** Layout Breakpoint 780 ********/
+
+@media screen and (min-width: 780px) {
+  
+  @supports (grid-area: auto) {
+    
+    body {
+      background-image: url(../images/sand-bg.jpg);
+      margin: 40px 40px .5rem;
+    }
+    
+    #wrapper {
+      box-shadow: 0 0 10px #000;
+      margin: 0 auto;
+      max-width: 1180px;
+    }
+    
+    /********* Nav *********/
+    
+    #menu-label {
+      display: none;
+    }
+    
+    nav {
+      background-color: #fff;
+      border: none;
+      display: block;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    nav a {
+      color: #4772a3;
+      display: inline;
+    }
+    
+    nav li {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    nav li:after {
+      content: '\2666';
+      padding: 1rem;
+    }
+    
+    nav li:last-of-type:after {
+      content: '';
+      padding-left: 0;
+    }
+    
+    /******** Header Layout *******/
+    
+    header {
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: 308px auto;
+      grid-template-rows: auto auto;
+    }
+    
+    header picture:before {
+      border: 15px solid #376399;
+      border-left-color: transparent;
+      border-top-color: transparent;
+      content: '';
+      display: block;
+      height: 0;
+      left: -30px;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+    
+    header picture:after {
+      border: 15px solid #376399;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      content: '';
+      display: block;
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      width: 0;
+    }
+    
+    header picture img {
+      box-shadow: 0 0 10px #000;
+    }
+    
+    picture {
+      background-color: transparent;
+    }
+    
+    header h1 {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    
+    header nav {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    
+    header picture {
+      grid-column: 1;
+      grid-row: 1/3;
+      left: 30px;
+      position: relative;
+      top: -30px;
+    }
+    
+    /******* Main Content Columns **********/
+    
+    main {
+      background-color: #4772a3;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto;
+    }
+    
+    main article h2 {
+      background-color: transparent;
+      color: #fff;
+      margin: 0;
+      padding-left: 1rem;
+    }
+    
+    main article div {
+      background: #fff url(../images/trees.png) center bottom no-repeat;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 5px 10px -3px #000 inset;
+      margin: 0 1rem;
+      padding-bottom: 280px;
+    }
+    
+    main h3 {
+      background-color: #668bb9;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 5px 10px -3px #000 inset;
+      padding: 1rem;
+    }
+    
+    main p {
+      padding: 1rem;
+    }
+    
+    main article {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: minmax(min-content, max-content) auto;
+    }
+    
+    /*************** Sidebar Ribbon *************/
+    
+    aside h2:after {
+      background-color: #9bba70;
+      bottom: -10px;
+      box-shadow: 0 0 5px #000;
+      content: '';
+      display: block;
+      height: 40px;
+      position: absolute;
+      right: -10px;
+      width: 20px;
+      z-index: -1;
+    }
+    
+    aside h2 {
+      box-shadow: 0 0 5px #000;
+      position: relative;
+      right: -20px;
+    }
+    
+    aside h2:before {
+      border: 20px solid #b0d380;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      bottom: 0;
+      box-shadow: 0 5px 5px -5px #000;
+      content: '';
+      display: block;
+      height: 0;
+      left: -35px;
+      position: absolute;
+      width: 0;
+    }
+    
+    aside:before {
+      border: 20px solid #b0d380;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      box-shadow: 0 -5px 5px -5px #000;
+      content: '';
+      display: block;
+      height: 0;
+      left: -8px;
+      position: absolute;
+      top: 8px;
+      width: 0;
+      z-index: 1;
+    }
+    
+    aside {
+      position: relative;
+    }
+    
+    /********* Footer **********/
+    
+    footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto;
+    }
+    
+    footer ul,
+    footer address li:first-of-type {
+      margin-top: 0;
+    }
+    
+  }
+  
+}
+
+/********** Upper bound font sizes *************/
+
+@media screen and (min-width: 1180px) {
+  
+  h1 {
+    font-size: 80px;
+  }
+  
+  main article h2 {
+    font-size: 48px;
+  }
+  
+  main div h3,
+  main aside h2 {
+    font-size: 36px;
+  }
+  
+  nav a,
+  main article p {
+    font-size: 24px;
+  }
+  
+}
